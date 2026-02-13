@@ -1,0 +1,16 @@
+<div class="overflow-hidden rounded-lg">
+
+	@if(!captcha()) {
+		<app-fake-captcha (verified)="captchaVerified($event)"></app-fake-captcha>
+	}
+	@else if(!finalYes()){
+		<app-question (yesClick)="questionYesClicked()"></app-question>
+	}
+	@else {
+		<app-final-yes></app-final-yes>
+	}
+	
+	@if(showPopup()) { <app-ok-popup (closePopup)="closePopup()"></app-ok-popup> }
+	
+	@if(showHearts()) { <app-hearts></app-hearts> }
+</div>
