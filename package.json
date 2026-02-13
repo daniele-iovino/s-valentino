@@ -1,12 +1,12 @@
 {
-	"name": "dev-arena",
+	"name": "s-valentino",
 	"version": "0.0.0",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",
 		"build": "ng build",
 		"build:prod": "ng build --configuration production --base-href=/s-valentino/",
-		"deploy": "npm run build:prod && npx angular-cli-ghpages --dir=dist/dev-arena/browser",
+		"deploy": "npm run build:prod && npx angular-cli-ghpages --dir=dist/s-valentino/browser",
 		"build:stats": "ng build --configuration production --source-map && npx source-map-explorer dist/**/browser/*.js --no-border-checks --html dist/report.html && open dist/report.html",
 		"watch": "ng build --watch --configuration development",
 		"test": "ng test --code-coverage"
