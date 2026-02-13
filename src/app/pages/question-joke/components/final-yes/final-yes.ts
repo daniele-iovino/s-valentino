@@ -7,6 +7,5 @@ import { Component, input } from '@angular/core';
   styleUrl: './final-yes.scss',
 })
 export class FinalYes {
-  src = input<string>('esitoSi.png'); // immagine input opzionale con default
-  alt = input<string>('Miriam e Federico'); // alt input opzionale con default
+  src = input<string>('amossiti.jpg'); // immagine input opzionale con default
 }

@@ -4,17 +4,19 @@ import { OkPopup } from './components/ok-popup/ok-popup';
 import { Hearts } from './components/hearts/hearts';
 import { Question } from './components/question/question';
 import { FinalYes } from './components/final-yes/final-yes';
+import { LastQuestion } from "./components/last-question/last-question";
 
 @Component({
   selector: 'app-question-joke',
-  imports: [FakeCaptcha, OkPopup, Hearts, Question, FinalYes],
+  imports: [FakeCaptcha, OkPopup, Hearts, Question, FinalYes, LastQuestion, LastQuestion],
   templateUrl: './question-joke.html',
   styleUrl: './question-joke.scss',
 })
 export class QuestionJoke {
 
 	// gestione captcha
-  captcha = signal(false);
+  captcha1 = signal(false);
+  captcha2 = signal(false);
 
 	// gestione popup question
 	showPopup = signal(false);
@@ -28,20 +30,25 @@ export class QuestionJoke {
 	});
 
 	// gestione final YES
-	finalYes = signal(false);
+	finalNo = signal(false);
+	lastQuestion = signal(false);
 
-  captchaVerified(verified:boolean):void {
-    this.captcha.set(verified);
+  captcha1Verified(verified:boolean):void {
+    this.captcha1.set(verified);
   }
 
-	questionYesClicked() {
+	captcha2Verified(verified:boolean):void {
+    this.captcha2.set(verified);
+  }
+
+	questionNoClicked() {
 		this.showPopup.set(true);
 	}
 
 	closePopup() {
 		this.showPopup.set(false);
 		this.showHearts.set(true);
-		this.finalYes.set(true);
+		this.finalNo.set(true);
 		setTimeout(() => {
 			this.showHearts.set(false);
 		}, 4000);

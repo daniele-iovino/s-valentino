@@ -20,15 +20,15 @@ export class FakeCaptcha {
   error = signal(false);
 
   images: CaptchaImage[] = [
-    { id: 1, url: 'barcellona.jpg', isCorrect: true, selected: false },
-    { id: 2, url: 'venezia.jpg', isCorrect: false, selected: false },
-    { id: 3, url: 'madeira.jpg', isCorrect: true, selected: false },
+    { id: 1, url: 'barcellona.jpg', isCorrect: false, selected: false },
+    { id: 2, url: 'agropoli.jpg', isCorrect: true, selected: false },
+    { id: 3, url: 'budapest.jpg', isCorrect: true, selected: false },
     { id: 4, url: 'parigi.jpg', isCorrect: false, selected: false },
-    { id: 5, url: 'new-york.jpg', isCorrect: false, selected: false },
+    { id: 5, url: 'milano.jpg', isCorrect: true, selected: false },
     { id: 6, url: 'amsterdam.jpg', isCorrect: false, selected: false },
 		{ id: 7, url: 'muragliacinese.jpg', isCorrect: false, selected: false },
     { id: 8, url: 'machupicchu.jpg', isCorrect: false, selected: false },
-    { id: 9, url: 'parga.jpg', isCorrect: true, selected: false },
+    { id: 9, url: 'sharm.jpg', isCorrect: true, selected: false }
   ];
 
   toggle(img: CaptchaImage) {
@@ -39,13 +39,12 @@ export class FakeCaptcha {
   submit() {
     const correct = this.images.filter(i => i.isCorrect).map(i => i.id).sort();
     const selected = this.images.filter(i => i.selected).map(i => i.id).sort();
-
     const isValid = JSON.stringify(correct) === JSON.stringify(selected);
 
     if (isValid) {
       this.verified.emit(true);
     } else {
-      this.error.set(true);
+			this.error.set(true);
     }
   }
 }

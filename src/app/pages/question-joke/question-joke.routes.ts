@@ -7,9 +7,9 @@ export const QUESTION_JOKE_ROUTES: Routes = [
     loadComponent: () =>
       import('./question-joke').then(m => m.QuestionJoke),
 		data: <RouteData>{
-			header: { title: 'Question Joke' },
-			sidenav: {text: 'Question Joke'},
-			footer: { text: 'Developed for fun' }
+			header: { title: 'S. Valentino' },
+			sidenav: {text: 'S. Valentino'},
+			footer: { text: 'per amossito' }
 		}
   },
 ];
