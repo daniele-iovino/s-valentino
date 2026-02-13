@@ -1,19 +1,20 @@
 <div class="overflow-hidden rounded-lg">
 
 	@if(!captcha1()) {
-		<app-fake-captcha (verified)="captcha1Verified($event)"></app-fake-captcha>
+	<app-fake-captcha (verified)="captcha1Verified($event)"></app-fake-captcha>
 	}
 	@else if(!captcha2()){
-		<app-question (verified)="captcha2Verified($event)"></app-question>
+	<app-question (verified)="captcha2Verified($event)"></app-question>
 	}
 	@else if(!finalNo()){
-		<app-last-question (noClick)="questionNoClicked()"></app-last-question>
+	<app-last-question (noClick)="questionNoClicked()"></app-last-question>
 	}
+
 	@else{
-		<app-final-yes></app-final-yes>
+	<app-final-yes></app-final-yes>
 	}
-	
+
 	@if(showPopup()) { <app-ok-popup (closePopup)="closePopup()"></app-ok-popup> }
-	
+
 	@if(showHearts()) { <app-hearts></app-hearts> }
 </div>
